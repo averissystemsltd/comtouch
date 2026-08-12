@@ -19,6 +19,50 @@
  */
 
 @theme inline {
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-char: #1c1c1c;
+  --color-midnight: #070707;
+  --color-iron: #262626;
+  --color-slate: #38464a;
+  --color-mist: #e5e4e4;
+  --color-smoke: #8d8d8d;
+  --color-pewter: #666666;
+  --color-ember: #b75928;
+  --color-pine: #193f32;
+  --color-tide: #002934;
+  --color-driftwood: #537179;
+  --color-cedar: #776157;
+  --color-coral: #df6a6b;
+  --color-action: #494949;
+
+  --font-proxima: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-lora: "Lora", Georgia, serif;
+
+  --text-body: 15px;
+  --text-body--line-height: 1.5;
+  --text-body--letter-spacing: 0.15px;
+  --text-subheading: 18px;
+  --text-subheading--line-height: 1.5;
+  --text-subheading--letter-spacing: 0.18px;
+  --text-heading-sm: 22px;
+  --text-heading-sm--line-height: 1.25;
+  --text-heading-sm--letter-spacing: -0.44px;
+  --text-heading: 36px;
+  --text-heading--line-height: 1.2;
+  --text-heading--letter-spacing: -0.72px;
+  --text-heading-lg: 62px;
+  --text-heading-lg--line-height: 1.1;
+  --text-heading-lg--letter-spacing: -1.55px;
+  --text-display: 168px;
+  --text-display--line-height: 0.8;
+  --text-display--letter-spacing: -4.2px;
+
+  --radius-card: 8px;
+  --radius-small: 3.2px;
+  --radius-button: 80px;
+  --radius-badge: 1584px;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -26,6 +70,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
