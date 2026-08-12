@@ -131,7 +131,7 @@ function Index() {
       {/* White canvas — label + heading + editorial body */}
       <section id="what-we-do" className="page-shell py-80">
         <div className="max-w-[600px]">
-          <p className="overline text-smoke">Core business areas</p>
+          <p className="label-overline text-smoke">Core business areas</p>
           <h2 className="section-heading mt-6">What we do</h2>
           <p className="mt-24 font-lora text-subheading tracking-[0.011em]">
             Four disciplines, one continuous line of responsibility. We stay on a site
@@ -174,7 +174,7 @@ function Index() {
 
       {/* Surface cards — Pine / Tide / Midnight */}
       <section id="surfaces" className="page-shell py-80">
-        <p className="overline text-pewter">Portfolio</p>
+        <p className="label-overline text-pewter">Portfolio</p>
         <h2 className="section-heading-sm mt-6 max-w-[600px]">
           Three registers, one standard of care.
         </h2>
@@ -196,7 +196,7 @@ function Index() {
       <section className="page-shell grid gap-16 pb-80 md:grid-cols-2">
         <article className="flex min-h-[420px] flex-col justify-between rounded-[8px] bg-mist p-24">
           <div>
-            <p className="overline text-pewter">Capital</p>
+            <p className="label-overline text-pewter">Capital</p>
             <h3 className="section-heading-sm mt-6">Invest with Aker</h3>
           </div>
           <div className="flex items-end justify-between">
@@ -217,7 +217,7 @@ function Index() {
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="relative">
-            <p className="overline text-mist">Partnerships</p>
+            <p className="label-overline text-mist">Partnerships</p>
             <h3 className="section-heading-sm mt-6 text-paper">We're open to collaborate</h3>
           </div>
           <a href="#contact" className="btn-text relative w-fit text-paper">
@@ -244,7 +244,7 @@ function Index() {
 
       <section id="contact" className="page-shell flex flex-col gap-32 py-80 md:flex-row md:items-end md:justify-between">
         <div className="max-w-[600px]">
-          <p className="overline text-smoke">Get in touch</p>
+          <p className="label-overline text-smoke">Get in touch</p>
           <h2 className="section-heading-sm mt-6">
             Tell us about the place you want to build.
           </h2>
