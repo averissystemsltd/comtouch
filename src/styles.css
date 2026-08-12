@@ -188,22 +188,140 @@
   }
 }
 
+@theme {
+  --spacing-4: 4px;
+  --spacing-5: 5px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-13: 13px;
+  --spacing-14: 14px;
+  --spacing-16: 16px;
+  --spacing-19: 19px;
+  --spacing-20: 20px;
+  --spacing-22: 22px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
+}
+
+:root {
+  --page-max-width: 1200px;
+  --section-gap: 80px;
+  --card-padding: 16px;
+  --element-gap: 16px;
+
+  --surface-paper: #ffffff;
+  --surface-mist: #e5e4e4;
+  --surface-pine: #193f32;
+  --surface-tide: #002934;
+  --surface-char: #1c1c1c;
+  --surface-midnight: #070707;
+}
+
 @layer base {
   body {
     font-family: var(--font-proxima);
     background-color: var(--color-paper);
     color: var(--color-ink);
+    font-size: var(--text-body);
+    line-height: 1.5;
     letter-spacing: 0.01em;
+    font-weight: 400;
   }
 }
 
-@utility display-mark {
+/* Brand wordmark — weight 300, 168px, -0.025em */
+@utility wordmark {
   font-weight: 300;
-  font-size: clamp(64px, 13vw, 168px);
+  font-size: clamp(72px, 13.5vw, 168px);
   line-height: 0.8;
   letter-spacing: -0.025em;
 }
 
+/* Section heading — weight 300 at 62px, -0.025em; steps down to 36px */
+@utility section-heading {
+  font-weight: 300;
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+@utility section-heading-sm {
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* Overline label */
+@utility label-overline {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.12px;
+}
+
+/* Ghost text-arrow button */
+@utility btn-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Emphasized ghost variant — 80px pill outline */
+@utility btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid currentColor;
+  border-radius: 80px;
+  padding: 19px 16px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Filled dark button */
+@utility btn-filled {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-char);
+  color: var(--color-paper);
+  border-radius: 80px;
+  padding: 19px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* Pill badge / tag */
+@utility badge {
+  display: inline-flex;
+  width: fit-content;
+  align-self: flex-start;
+  align-items: center;
+  border-radius: 1584px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
 @utility hairline-top {
   border-top: 1px solid var(--color-mist);
+}
+
+@utility page-shell {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin-inline: auto;
+  padding-inline: 24px;
 }
