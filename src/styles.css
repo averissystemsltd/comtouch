@@ -305,6 +305,8 @@
 /* Pill badge / tag */
 @utility badge {
   display: inline-flex;
+  width: fit-content;
+  align-self: flex-start;
   align-items: center;
   border-radius: 1584px;
   padding: 6px 14px;
