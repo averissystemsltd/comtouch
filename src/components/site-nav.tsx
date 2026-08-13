@@ -83,7 +83,7 @@ export function SiteNav() {
                   <li key={l.label}>
                     <Link
                       to={l.to}
-                      params={"params" in l ? l.params : undefined}
+                      params={("params" in l ? l.params : {}) as never}
                       onClick={() => setOpen(false)}
                       className="flex items-center justify-between gap-12 text-[15px] text-mist"
                       activeProps={{ className: "text-paper" }}
