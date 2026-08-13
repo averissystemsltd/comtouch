@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EcoToursIndexRouteImport } from './routes/eco-tours.index'
+import { Route as EcoToursSlugRouteImport } from './routes/eco-tours.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EcoToursIndexRoute = EcoToursIndexRouteImport.update({
+  id: '/eco-tours/',
+  path: '/eco-tours/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EcoToursSlugRoute = EcoToursSlugRouteImport.update({
+  id: '/eco-tours/$slug',
+  path: '/eco-tours/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/eco-tours/$slug': typeof EcoToursSlugRoute
+  '/eco-tours/': typeof EcoToursIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/eco-tours/$slug': typeof EcoToursSlugRoute
+  '/eco-tours': typeof EcoToursIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/eco-tours/$slug': typeof EcoToursSlugRoute
+  '/eco-tours/': typeof EcoToursIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/eco-tours/$slug' | '/eco-tours/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/eco-tours/$slug' | '/eco-tours'
+  id: '__root__' | '/' | '/eco-tours/$slug' | '/eco-tours/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EcoToursSlugRoute: typeof EcoToursSlugRoute
+  EcoToursIndexRoute: typeof EcoToursIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/eco-tours/': {
+      id: '/eco-tours/'
+      path: '/eco-tours'
+      fullPath: '/eco-tours/'
+      preLoaderRoute: typeof EcoToursIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eco-tours/$slug': {
+      id: '/eco-tours/$slug'
+      path: '/eco-tours/$slug'
+      fullPath: '/eco-tours/$slug'
+      preLoaderRoute: typeof EcoToursSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EcoToursSlugRoute: EcoToursSlugRoute,
+  EcoToursIndexRoute: EcoToursIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
