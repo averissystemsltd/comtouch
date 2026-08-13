@@ -7,10 +7,10 @@ const groups = [
     label: "Eco Tours",
     links: [
       { to: "/eco-tours", label: "All Experiences" },
-      { to: "/eco-tours/cultural-local-dance", label: "Culture & Dance" },
-      { to: "/eco-tours/dhow-sailing", label: "Dhow Sailing" },
-      { to: "/eco-tours/mangrove-conservation", label: "Mangrove Tours" },
-      { to: "/eco-tours/eco-learning-mwache-forest", label: "Eco-Learning" },
+      { to: "/eco-tours/$slug", params: { slug: "cultural-local-dance" }, label: "Culture & Dance" },
+      { to: "/eco-tours/$slug", params: { slug: "dhow-sailing" }, label: "Dhow Sailing" },
+      { to: "/eco-tours/$slug", params: { slug: "mangrove-conservation" }, label: "Mangrove Tours" },
+      { to: "/eco-tours/$slug", params: { slug: "eco-learning-mwache-forest" }, label: "Eco-Learning" },
     ],
   },
   {
@@ -80,9 +80,10 @@ export function SiteNav() {
               <p className="label-overline text-smoke">{g.label}</p>
               <ul className="mt-8 flex flex-col gap-6">
                 {g.links.map((l) => (
-                  <li key={l.to}>
+                  <li key={l.label}>
                     <Link
                       to={l.to}
+                      params={"params" in l ? l.params : undefined}
                       onClick={() => setOpen(false)}
                       className="flex items-center justify-between gap-12 text-[15px] text-mist"
                       activeProps={{ className: "text-paper" }}

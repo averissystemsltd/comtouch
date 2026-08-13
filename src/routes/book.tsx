@@ -113,16 +113,16 @@ function BookPage() {
                     Ngoma ya Mulungu, Kaya Chonyi (annual event)
                   </option>
                 </select>
-                {errors.experience && (
-                  <span className="mt-6 block text-[12px] text-coral">{errors.experience}</span>
+                {errors['experience'] && (
+                  <span className="mt-6 block text-[12px] text-coral">{errors['experience']}</span>
                 )}
               </label>
 
               <label className="block">
                 <span className="label-overline text-smoke">Preferred date</span>
                 <input name="date" type="date" className={field} />
-                {errors.date && (
-                  <span className="mt-6 block text-[12px] text-coral">{errors.date}</span>
+                {errors['date'] && (
+                  <span className="mt-6 block text-[12px] text-coral">{errors['date']}</span>
                 )}
               </label>
 
