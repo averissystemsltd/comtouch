@@ -10,33 +10,206 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as MediaRouteImport } from './routes/media'
+import { Route as AboutPartnersRouteImport } from './routes/about.partners'
+import { Route as AboutStoryRouteImport } from './routes/about.story'
+import { Route as AboutTeamRouteImport } from './routes/about.team'
+import { Route as EcoToursIndexRouteImport } from './routes/eco-tours.index'
+import { Route as EcoToursSlugRouteImport } from './routes/eco-tours.$slug'
+import { Route as GetInvolvedDonateRouteImport } from './routes/get-involved.donate'
+import { Route as GetInvolvedVolunteerRouteImport } from './routes/get-involved.volunteer'
+import { Route as LegalSlugRouteImport } from './routes/legal.$slug'
+import { Route as WorkMangroveRestorationRouteImport } from './routes/work.mangrove-restoration'
+import { Route as WorkMaricultureRouteImport } from './routes/work.mariculture'
+import { Route as WorkResearchRouteImport } from './routes/work.research'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaRoute = MediaRouteImport.update({
+  id: '/media',
+  path: '/media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutPartnersRoute = AboutPartnersRouteImport.update({
+  id: '/about/partners',
+  path: '/about/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutStoryRoute = AboutStoryRouteImport.update({
+  id: '/about/story',
+  path: '/about/story',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutTeamRoute = AboutTeamRouteImport.update({
+  id: '/about/team',
+  path: '/about/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EcoToursIndexRoute = EcoToursIndexRouteImport.update({
+  id: '/eco-tours/',
+  path: '/eco-tours/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EcoToursSlugRoute = EcoToursSlugRouteImport.update({
+  id: '/eco-tours/$slug',
+  path: '/eco-tours/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetInvolvedDonateRoute = GetInvolvedDonateRouteImport.update({
+  id: '/get-involved/donate',
+  path: '/get-involved/donate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetInvolvedVolunteerRoute = GetInvolvedVolunteerRouteImport.update({
+  id: '/get-involved/volunteer',
+  path: '/get-involved/volunteer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalSlugRoute = LegalSlugRouteImport.update({
+  id: '/legal/$slug',
+  path: '/legal/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkMangroveRestorationRoute = WorkMangroveRestorationRouteImport.update({
+  id: '/work/mangrove-restoration',
+  path: '/work/mangrove-restoration',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkMaricultureRoute = WorkMaricultureRouteImport.update({
+  id: '/work/mariculture',
+  path: '/work/mariculture',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkResearchRoute = WorkResearchRouteImport.update({
+  id: '/work/research',
+  path: '/work/research',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
+  '/media': typeof MediaRoute
+  '/about/partners': typeof AboutPartnersRoute
+  '/about/story': typeof AboutStoryRoute
+  '/about/team': typeof AboutTeamRoute
+  '/eco-tours/$slug': typeof EcoToursSlugRoute
+  '/get-involved/donate': typeof GetInvolvedDonateRoute
+  '/get-involved/volunteer': typeof GetInvolvedVolunteerRoute
+  '/legal/$slug': typeof LegalSlugRoute
+  '/work/mangrove-restoration': typeof WorkMangroveRestorationRoute
+  '/work/mariculture': typeof WorkMaricultureRoute
+  '/work/research': typeof WorkResearchRoute
+  '/eco-tours/': typeof EcoToursIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
+  '/media': typeof MediaRoute
+  '/about/partners': typeof AboutPartnersRoute
+  '/about/story': typeof AboutStoryRoute
+  '/about/team': typeof AboutTeamRoute
+  '/eco-tours/$slug': typeof EcoToursSlugRoute
+  '/get-involved/donate': typeof GetInvolvedDonateRoute
+  '/get-involved/volunteer': typeof GetInvolvedVolunteerRoute
+  '/legal/$slug': typeof LegalSlugRoute
+  '/work/mangrove-restoration': typeof WorkMangroveRestorationRoute
+  '/work/mariculture': typeof WorkMaricultureRoute
+  '/work/research': typeof WorkResearchRoute
+  '/eco-tours': typeof EcoToursIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
+  '/media': typeof MediaRoute
+  '/about/partners': typeof AboutPartnersRoute
+  '/about/story': typeof AboutStoryRoute
+  '/about/team': typeof AboutTeamRoute
+  '/eco-tours/$slug': typeof EcoToursSlugRoute
+  '/get-involved/donate': typeof GetInvolvedDonateRoute
+  '/get-involved/volunteer': typeof GetInvolvedVolunteerRoute
+  '/legal/$slug': typeof LegalSlugRoute
+  '/work/mangrove-restoration': typeof WorkMangroveRestorationRoute
+  '/work/mariculture': typeof WorkMaricultureRoute
+  '/work/research': typeof WorkResearchRoute
+  '/eco-tours/': typeof EcoToursIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/book'
+    | '/media'
+    | '/about/partners'
+    | '/about/story'
+    | '/about/team'
+    | '/eco-tours/$slug'
+    | '/get-involved/donate'
+    | '/get-involved/volunteer'
+    | '/legal/$slug'
+    | '/work/mangrove-restoration'
+    | '/work/mariculture'
+    | '/work/research'
+    | '/eco-tours/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/book'
+    | '/media'
+    | '/about/partners'
+    | '/about/story'
+    | '/about/team'
+    | '/eco-tours/$slug'
+    | '/get-involved/donate'
+    | '/get-involved/volunteer'
+    | '/legal/$slug'
+    | '/work/mangrove-restoration'
+    | '/work/mariculture'
+    | '/work/research'
+    | '/eco-tours'
+  id:
+    | '__root__'
+    | '/'
+    | '/book'
+    | '/media'
+    | '/about/partners'
+    | '/about/story'
+    | '/about/team'
+    | '/eco-tours/$slug'
+    | '/get-involved/donate'
+    | '/get-involved/volunteer'
+    | '/legal/$slug'
+    | '/work/mangrove-restoration'
+    | '/work/mariculture'
+    | '/work/research'
+    | '/eco-tours/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BookRoute: typeof BookRoute
+  MediaRoute: typeof MediaRoute
+  AboutPartnersRoute: typeof AboutPartnersRoute
+  AboutStoryRoute: typeof AboutStoryRoute
+  AboutTeamRoute: typeof AboutTeamRoute
+  EcoToursSlugRoute: typeof EcoToursSlugRoute
+  GetInvolvedDonateRoute: typeof GetInvolvedDonateRoute
+  GetInvolvedVolunteerRoute: typeof GetInvolvedVolunteerRoute
+  LegalSlugRoute: typeof LegalSlugRoute
+  WorkMangroveRestorationRoute: typeof WorkMangroveRestorationRoute
+  WorkMaricultureRoute: typeof WorkMaricultureRoute
+  WorkResearchRoute: typeof WorkResearchRoute
+  EcoToursIndexRoute: typeof EcoToursIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,12 +221,126 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media': {
+      id: '/media'
+      path: '/media'
+      fullPath: '/media'
+      preLoaderRoute: typeof MediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/partners': {
+      id: '/about/partners'
+      path: '/about/partners'
+      fullPath: '/about/partners'
+      preLoaderRoute: typeof AboutPartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/story': {
+      id: '/about/story'
+      path: '/about/story'
+      fullPath: '/about/story'
+      preLoaderRoute: typeof AboutStoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/team': {
+      id: '/about/team'
+      path: '/about/team'
+      fullPath: '/about/team'
+      preLoaderRoute: typeof AboutTeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eco-tours/': {
+      id: '/eco-tours/'
+      path: '/eco-tours'
+      fullPath: '/eco-tours/'
+      preLoaderRoute: typeof EcoToursIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eco-tours/$slug': {
+      id: '/eco-tours/$slug'
+      path: '/eco-tours/$slug'
+      fullPath: '/eco-tours/$slug'
+      preLoaderRoute: typeof EcoToursSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-involved/donate': {
+      id: '/get-involved/donate'
+      path: '/get-involved/donate'
+      fullPath: '/get-involved/donate'
+      preLoaderRoute: typeof GetInvolvedDonateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-involved/volunteer': {
+      id: '/get-involved/volunteer'
+      path: '/get-involved/volunteer'
+      fullPath: '/get-involved/volunteer'
+      preLoaderRoute: typeof GetInvolvedVolunteerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/$slug': {
+      id: '/legal/$slug'
+      path: '/legal/$slug'
+      fullPath: '/legal/$slug'
+      preLoaderRoute: typeof LegalSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/mangrove-restoration': {
+      id: '/work/mangrove-restoration'
+      path: '/work/mangrove-restoration'
+      fullPath: '/work/mangrove-restoration'
+      preLoaderRoute: typeof WorkMangroveRestorationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/mariculture': {
+      id: '/work/mariculture'
+      path: '/work/mariculture'
+      fullPath: '/work/mariculture'
+      preLoaderRoute: typeof WorkMaricultureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/research': {
+      id: '/work/research'
+      path: '/work/research'
+      fullPath: '/work/research'
+      preLoaderRoute: typeof WorkResearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BookRoute: BookRoute,
+  MediaRoute: MediaRoute,
+  AboutPartnersRoute: AboutPartnersRoute,
+  AboutStoryRoute: AboutStoryRoute,
+  AboutTeamRoute: AboutTeamRoute,
+  EcoToursSlugRoute: EcoToursSlugRoute,
+  GetInvolvedDonateRoute: GetInvolvedDonateRoute,
+  GetInvolvedVolunteerRoute: GetInvolvedVolunteerRoute,
+  LegalSlugRoute: LegalSlugRoute,
+  WorkMangroveRestorationRoute: WorkMangroveRestorationRoute,
+  WorkMaricultureRoute: WorkMaricultureRoute,
+  WorkResearchRoute: WorkResearchRoute,
+  EcoToursIndexRoute: EcoToursIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
