@@ -10,12 +10,21 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BookRouteImport } from './routes/book'
 import { Route as EcoToursIndexRouteImport } from './routes/eco-tours.index'
 import { Route as EcoToursSlugRouteImport } from './routes/eco-tours.$slug'
+import { Route as WorkMangroveRestorationRouteImport } from './routes/work.mangrove-restoration'
+import { Route as WorkMaricultureRouteImport } from './routes/work.mariculture'
+import { Route as WorkResearchRouteImport } from './routes/work.research'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EcoToursIndexRoute = EcoToursIndexRouteImport.update({
@@ -28,34 +37,87 @@ const EcoToursSlugRoute = EcoToursSlugRouteImport.update({
   path: '/eco-tours/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkMangroveRestorationRoute = WorkMangroveRestorationRouteImport.update({
+  id: '/work/mangrove-restoration',
+  path: '/work/mangrove-restoration',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkMaricultureRoute = WorkMaricultureRouteImport.update({
+  id: '/work/mariculture',
+  path: '/work/mariculture',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkResearchRoute = WorkResearchRouteImport.update({
+  id: '/work/research',
+  path: '/work/research',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
   '/eco-tours/$slug': typeof EcoToursSlugRoute
+  '/work/mangrove-restoration': typeof WorkMangroveRestorationRoute
+  '/work/mariculture': typeof WorkMaricultureRoute
+  '/work/research': typeof WorkResearchRoute
   '/eco-tours/': typeof EcoToursIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
   '/eco-tours/$slug': typeof EcoToursSlugRoute
+  '/work/mangrove-restoration': typeof WorkMangroveRestorationRoute
+  '/work/mariculture': typeof WorkMaricultureRoute
+  '/work/research': typeof WorkResearchRoute
   '/eco-tours': typeof EcoToursIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
   '/eco-tours/$slug': typeof EcoToursSlugRoute
+  '/work/mangrove-restoration': typeof WorkMangroveRestorationRoute
+  '/work/mariculture': typeof WorkMaricultureRoute
+  '/work/research': typeof WorkResearchRoute
   '/eco-tours/': typeof EcoToursIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/eco-tours/$slug' | '/eco-tours/'
+  fullPaths:
+    | '/'
+    | '/book'
+    | '/eco-tours/$slug'
+    | '/work/mangrove-restoration'
+    | '/work/mariculture'
+    | '/work/research'
+    | '/eco-tours/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/eco-tours/$slug' | '/eco-tours'
-  id: '__root__' | '/' | '/eco-tours/$slug' | '/eco-tours/'
+  to:
+    | '/'
+    | '/book'
+    | '/eco-tours/$slug'
+    | '/work/mangrove-restoration'
+    | '/work/mariculture'
+    | '/work/research'
+    | '/eco-tours'
+  id:
+    | '__root__'
+    | '/'
+    | '/book'
+    | '/eco-tours/$slug'
+    | '/work/mangrove-restoration'
+    | '/work/mariculture'
+    | '/work/research'
+    | '/eco-tours/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BookRoute: typeof BookRoute
   EcoToursSlugRoute: typeof EcoToursSlugRoute
+  WorkMangroveRestorationRoute: typeof WorkMangroveRestorationRoute
+  WorkMaricultureRoute: typeof WorkMaricultureRoute
+  WorkResearchRoute: typeof WorkResearchRoute
   EcoToursIndexRoute: typeof EcoToursIndexRoute
 }
 
@@ -66,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/eco-tours/': {
@@ -82,12 +151,37 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EcoToursSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/mangrove-restoration': {
+      id: '/work/mangrove-restoration'
+      path: '/work/mangrove-restoration'
+      fullPath: '/work/mangrove-restoration'
+      preLoaderRoute: typeof WorkMangroveRestorationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/mariculture': {
+      id: '/work/mariculture'
+      path: '/work/mariculture'
+      fullPath: '/work/mariculture'
+      preLoaderRoute: typeof WorkMaricultureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/research': {
+      id: '/work/research'
+      path: '/work/research'
+      fullPath: '/work/research'
+      preLoaderRoute: typeof WorkResearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BookRoute: BookRoute,
   EcoToursSlugRoute: EcoToursSlugRoute,
+  WorkMangroveRestorationRoute: WorkMangroveRestorationRoute,
+  WorkMaricultureRoute: WorkMaricultureRoute,
+  WorkResearchRoute: WorkResearchRoute,
   EcoToursIndexRoute: EcoToursIndexRoute,
 }
 export const routeTree = rootRouteImport
