@@ -70,7 +70,7 @@ function Home() {
           posterAlt="Boats on Tudor Creek near the Tsunza-Mwache peninsula"
         />
 
-        <div className="absolute left-16 top-24 z-10 max-w-[440px] md:left-[40px] md:top-[40px]">
+        <div className="absolute left-16 top-80 z-10 max-w-[440px] md:left-[40px] md:top-[112px]">
           <p className="label-overline text-paper/80">Tsunza-Mwache · Kenyan coast</p>
           <p className="mt-16 text-body text-paper">
             Community-led eco-tours across the tides, mangroves, food and dances of the
