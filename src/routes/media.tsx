@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/page-parts";
 import { mediaGroups } from "@/data/site";
+import { YoutubeBackground } from "@/components/youtube-background";
 import dance from "@/assets/ct-dance.jpg";
 import fishing from "@/assets/ct-fishing.jpg";
 import mangrove from "@/assets/ct-mangrove.jpg";
@@ -37,6 +38,14 @@ function MediaPage() {
         title="The peninsula, on film"
         intro="Short clips from each experience — tides, tools, dances and the mangrove nursery — so you know exactly what a day out with ComTouch looks like."
       />
+
+      <section className="relative mb-80 h-[70vh] w-full overflow-hidden">
+        <YoutubeBackground poster={creek} posterAlt="Tudor Creek on the Kenyan coast" />
+        <div className="absolute bottom-24 left-16 z-10 max-w-[700px] md:bottom-[40px] md:left-[40px]">
+          <span className="badge bg-paper/15 text-paper">Featured film</span>
+          <h2 className="section-heading-sm mt-8 text-paper">Growing with the people</h2>
+        </div>
+      </section>
 
       <section className="page-shell pb-80">
         {mediaGroups.map((g, gi) => (
