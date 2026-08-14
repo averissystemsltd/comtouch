@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Arrow } from "./arrow";
+import logo from "@/assets/comtouch-logo.png.asset.json";
 
 const groups = [
   {
@@ -43,11 +44,19 @@ export function SiteNav() {
   const [open, setOpen] = useState(false);
 
   return (
+    <>
+      <Link
+        to="/"
+        aria-label="ComTouch Kenya — home"
+        className="fixed left-16 top-16 z-50 flex items-center gap-8 rounded-[1584px] bg-paper/90 p-6 backdrop-blur md:left-24 md:top-24"
+      >
+        <img src={logo.url} alt="Community Touch Kenya logo" width={44} height={44} className="h-44 w-44 rounded-full object-contain" />
+      </Link>
     <div className="fixed right-16 top-16 z-50 flex flex-col items-end gap-12 md:right-24 md:top-24">
       <div className="flex items-center gap-8">
         <Link
           to="/book"
-          className="hidden h-32 items-center gap-8 rounded-[1584px] bg-ember px-13 text-[12px] font-medium tracking-[0.12px] text-paper sm:flex"
+          className="hidden h-32 items-center gap-8 rounded-[1584px] bg-leaf px-13 text-[12px] font-medium tracking-[0.12px] text-paper sm:flex"
         >
           Book a Tour <Arrow size={13} />
         </Link>
@@ -99,12 +108,13 @@ export function SiteNav() {
           <Link
             to="/book"
             onClick={() => setOpen(false)}
-            className="btn-text mt-8 text-ember sm:col-span-2"
+            className="btn-text mt-8 text-leaf sm:col-span-2"
           >
             Book a Tour <Arrow />
           </Link>
         </nav>
       )}
     </div>
+    </>
   );
 }

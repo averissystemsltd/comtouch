@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { contact, orgBlurb, legalPages } from "@/data/site";
+import logo from "@/assets/comtouch-logo.png.asset.json";
 
 const explore = [
   { to: "/about/story", label: "Our Story" },
@@ -23,7 +24,15 @@ export function SiteFooter() {
     <footer className="bg-char text-mist">
       <div className="page-shell grid gap-32 py-80 md:grid-cols-4">
         <div className="md:col-span-1">
-          <p className="text-heading-sm font-light text-paper">ComTouch Kenya</p>
+          <img
+            src={logo.url}
+            alt="Community Touch Kenya logo"
+            width={72}
+            height={72}
+            loading="lazy"
+            className="h-64 w-64 rounded-full bg-paper object-contain p-4"
+          />
+          <p className="mt-16 text-heading-sm font-light text-paper">ComTouch Kenya</p>
           <p className="mt-16 text-body text-smoke">{orgBlurb}</p>
         </div>
         <div>
