@@ -64,13 +64,11 @@ function Home() {
   return (
     <main className="bg-paper text-ink">
       <section className="relative h-screen w-full overflow-hidden">
-        <img
-          src={heroCreek}
-          alt="A wooden dhow crossing the mangrove creek at dawn on the Tsunza-Mwache peninsula"
-          width={1920}
-          height={1280}
-          className="absolute inset-0 h-full w-full object-cover"
+        <YoutubeBackground
+          poster={heroCreek}
+          posterAlt="Boats on Tudor Creek near the Tsunza-Mwache peninsula"
         />
+
         <div className="absolute left-16 top-24 max-w-[440px] md:left-[40px] md:top-[40px]">
           <p className="label-overline text-paper/80">Tsunza-Mwache · Kenyan coast</p>
           <p className="mt-16 text-body text-paper">
