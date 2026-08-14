@@ -50,7 +50,7 @@ export function SiteNav() {
         aria-label="ComTouch Kenya — home"
         className="fixed left-16 top-16 z-50 flex items-center gap-8 rounded-[1584px] bg-paper/90 p-6 backdrop-blur md:left-24 md:top-24"
       >
-        <img src={logo.url} alt="Community Touch Kenya logo" width={44} height={44} className="h-44 w-44 rounded-full object-contain" />
+        <img src={logo.url} alt="Community Touch Kenya logo" width={44} height={44} className="h-48 w-48 rounded-full object-contain" />
       </Link>
     <div className="fixed right-16 top-16 z-50 flex flex-col items-end gap-12 md:right-24 md:top-24">
       <div className="flex items-center gap-8">
