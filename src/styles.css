@@ -28,9 +28,13 @@
   --color-mist: #e5e4e4;
   --color-smoke: #8d8d8d;
   --color-pewter: #666666;
-  --color-ember: #b75928;
-  --color-pine: #193f32;
-  --color-tide: #002934;
+  --color-ember: #20821d;
+  --color-leaf: #20821d;
+  --color-forest: #14532b;
+  --color-khaki: #b9a77a;
+  --color-gold: #b8860b;
+  --color-pine: #14532b;
+  --color-tide: #0b3a2e;
   --color-driftwood: #537179;
   --color-cedar: #776157;
   --color-coral: #df6a6b;
@@ -216,8 +220,8 @@
 
   --surface-paper: #ffffff;
   --surface-mist: #e5e4e4;
-  --surface-pine: #193f32;
-  --surface-tide: #002934;
+  --surface-pine: #14532b;
+  --surface-tide: #0b3a2e;
   --surface-char: #1c1c1c;
   --surface-midnight: #070707;
 }
@@ -293,7 +297,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: var(--color-char);
+  background-color: var(--color-leaf);
   color: var(--color-paper);
   border-radius: 80px;
   padding: 19px 16px;
