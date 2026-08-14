@@ -4,6 +4,7 @@ import dance from "@/assets/ct-dance.jpg";
 import mangrove from "@/assets/ct-mangrove.jpg";
 import fishing from "@/assets/ct-fishing.jpg";
 import { Arrow } from "@/components/arrow";
+import { YoutubeBackground } from "@/components/youtube-background";
 import { CtaBand } from "@/components/page-parts";
 import { faqs, keywordBand } from "@/data/site";
 import { tours, ksh } from "@/data/tours";
@@ -69,7 +70,7 @@ function Home() {
           posterAlt="Boats on Tudor Creek near the Tsunza-Mwache peninsula"
         />
 
-        <div className="absolute left-16 top-24 max-w-[440px] md:left-[40px] md:top-[40px]">
+        <div className="absolute left-16 top-24 z-10 max-w-[440px] md:left-[40px] md:top-[40px]">
           <p className="label-overline text-paper/80">Tsunza-Mwache · Kenyan coast</p>
           <p className="mt-16 text-body text-paper">
             Community-led eco-tours across the tides, mangroves, food and dances of the
@@ -78,7 +79,7 @@ function Home() {
           </p>
         </div>
 
-        <div className="absolute bottom-24 left-16 right-16 md:bottom-[40px] md:left-[40px] md:right-[40px]">
+        <div className="absolute bottom-24 left-16 right-16 z-10 md:bottom-[40px] md:left-[40px] md:right-[40px]">
           <h1 className="section-heading max-w-[900px] text-paper">
             Experience the living coast of Tsunza-Mwache
           </h1>
