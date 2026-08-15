@@ -70,18 +70,15 @@ function Home() {
           posterAlt="Boats on Tudor Creek near the Tsunza-Mwache peninsula"
         />
 
-        <div className="absolute left-16 top-80 z-10 max-w-[440px] md:left-[40px] md:top-[112px]">
+        <div className="absolute bottom-24 left-16 right-16 z-10 md:bottom-[40px] md:left-[40px] md:right-[40px]">
           <p className="label-overline text-paper/80">Tsunza-Mwache · Kenyan coast</p>
-          <p className="mt-16 text-body text-paper">
+          <p className="mt-12 max-w-[560px] text-body text-mist">
             Community-led eco-tours across the tides, mangroves, food and dances of the
             peninsula, where every visit helps restore the coast and pays the community
             directly.
           </p>
-        </div>
-
-        <div className="absolute bottom-24 left-16 right-16 z-10 md:bottom-[40px] md:left-[40px] md:right-[40px]">
-          <h1 className="section-heading max-w-[900px] text-paper">
-            Experience the living coast of Tsunza-Mwache
+          <h1 className="section-heading mt-24 max-w-[900px] text-paper">
+            Discover Tsunza through Community Touch Kenya
           </h1>
           <div className="mt-24 flex flex-wrap items-center gap-16">
             <Link to="/book" className="btn-filled">
@@ -104,6 +101,7 @@ function Home() {
             ))}
           </ul>
         </div>
+
       </section>
 
       {/* Keyword band */}
