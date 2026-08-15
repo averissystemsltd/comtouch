@@ -124,7 +124,7 @@ function TourPage() {
               Send an enquiry with your dates and group size and a guide will confirm boat
               transport, guide and dance availability, and the full cost breakdown.
             </p>
-            <Link to="/book" className="btn-text mt-16 text-ember">
+            <Link to="/book" className="btn-text mt-16 text-leaf">
               Book a Tour <Arrow />
             </Link>
           </div>

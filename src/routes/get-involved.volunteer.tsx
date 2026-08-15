@@ -90,7 +90,7 @@ function VolunteerPage() {
           </p>
           <a
             href={`mailto:${contact.email}?subject=Volunteering with ComTouch Kenya`}
-            className="btn-text mt-16 text-ember"
+            className="btn-text mt-16 text-leaf"
           >
             Apply to volunteer <Arrow />
           </a>

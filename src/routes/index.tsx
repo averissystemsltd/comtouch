@@ -243,7 +243,7 @@ function Home() {
       <section className="page-shell pb-80">
         <div className="flex items-end justify-between gap-16">
           <h2 className="section-heading-sm">Moments from the peninsula</h2>
-          <Link to="/media" className="btn-text text-ember">
+          <Link to="/media" className="btn-text text-leaf">
             Watch the film <Arrow />
           </Link>
         </div>
