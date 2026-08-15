@@ -54,8 +54,10 @@ export function SiteNav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-paper/95 text-ink backdrop-blur hairline-bottom" : "bg-transparent text-paper"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-paper text-ink shadow-[0_1px_0_0_rgba(0,0,0,0.06)] hairline-bottom"
+          : "bg-transparent text-paper"
       }`}
       onMouseLeave={() => setOpenGroup(null)}
     >
@@ -76,12 +78,12 @@ export function SiteNav() {
               <button
                 onClick={() => setOpenGroup((v) => (v === g.label ? null : g.label))}
                 aria-expanded={openGroup === g.label}
-                className={`flex items-center gap-6 rounded-[1584px] px-13 py-8 text-[13px] font-medium tracking-[0.12px] transition-colors ${
+                className={`flex h-32 items-center gap-5 rounded-[1584px] px-10 py-6 text-[13px] font-medium tracking-[0.12px] transition-colors ${
                   openGroup === g.label
                     ? scrolled
                       ? "bg-mist text-ink"
                       : "bg-paper/15 text-paper"
-                    : ""
+                    : "hover:bg-paper/10"
                 }`}
               >
                 {g.label}
@@ -117,23 +119,23 @@ export function SiteNav() {
         <div className="flex flex-none items-center gap-8">
           <Link
             to="/book"
-            className="hidden h-40 items-center gap-8 rounded-[1584px] bg-leaf px-16 text-[13px] font-medium tracking-[0.12px] text-paper transition-opacity hover:opacity-90 sm:flex"
+            className="hidden h-32 items-center gap-6 rounded-[1584px] bg-leaf px-14 text-[13px] font-medium tracking-[0.12px] text-paper transition-opacity hover:opacity-90 sm:flex"
           >
             Book a Tour <Arrow size={13} />
           </Link>
           <button
             onClick={() => setOpen((v) => !v)}
-            className={`flex h-40 items-center gap-8 rounded-[1584px] px-13 lg:hidden ${
+            className={`flex h-32 items-center gap-6 rounded-[1584px] px-10 lg:hidden ${
               scrolled ? "bg-char text-paper" : "bg-paper/15 text-paper"
             }`}
             aria-expanded={open}
             aria-label="Open menu"
           >
             <span className="text-[12px] font-medium tracking-[0.12px]">MENU</span>
-            <span className="flex flex-col gap-4" aria-hidden="true">
-              <span className="block h-px w-16 bg-current" />
-              <span className="block h-px w-16 bg-current" />
-              <span className="block h-px w-16 bg-current" />
+            <span className="flex flex-col gap-3" aria-hidden="true">
+              <span className="block h-px w-14 bg-current" />
+              <span className="block h-px w-14 bg-current" />
+              <span className="block h-px w-14 bg-current" />
             </span>
           </button>
         </div>
