@@ -7,13 +7,13 @@ import { tours, tourCategories, annualEvent, ksh } from "@/data/tours";
 export const Route = createFileRoute("/eco-tours/")({
   head: () => ({
     meta: [
-      { title: "Eco Tours — Thirteen Community Experiences | ComTouch Kenya" },
+      { title: "Eco Tours — Community Experiences | ComTouch Kenya" },
       {
         name: "description",
         content:
-          "Thirteen guided experiences on the Tsunza-Mwache peninsula: fishing, dhow sailing, dance, food, crafts, conservation and eco-learning. Full cost breakdowns on every tour.",
+          "Guided experiences on the Tsunza-Mwache peninsula: fishing, dhow sailing, dance, food, crafts, conservation and eco-learning. Full cost breakdowns on every tour.",
       },
-      { property: "og:title", content: "Thirteen ways into Tsunza-Mwache" },
+      { property: "og:title", content: "Ways into Tsunza-Mwache" },
       {
         property: "og:description",
         content:
@@ -34,7 +34,7 @@ function EcoTours() {
     <main className="bg-paper text-ink">
       <PageHeader
         eyebrow="Eco Tours"
-        title="Thirteen ways into Tsunza-Mwache"
+        title="Ways into Tsunza-Mwache"
         intro="Every tour is guided by the community it visits and plants mangrove seedlings at Ksh 100 each. Boat transport, guide fees and any local dance are itemised on each tour's page as a full cost breakdown."
       />
 

@@ -16,7 +16,7 @@ export const orgBlurb =
 export const faqs = [
   {
     q: "What can I do on a tour?",
-    a: "Sail a dhow across the creek, fish with traditional gear, plant mangroves, share a meal cooked the local way, and watch dances like Rawawe, kayamba, ngoma ya mlungu and mdundiko. Thirteen experiences span fishing, culture, food, conservation and eco-learning.",
+    a: "Sail a dhow across the creek, fish with traditional gear, plant mangroves, share a meal cooked the local way, and watch dances like Rawawe, kayamba, ngoma ya mlungu and mdundiko. Experiences span fishing, culture, food, conservation and eco-learning.",
   },
   {
     q: "Where does the money go?",

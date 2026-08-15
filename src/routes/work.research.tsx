@@ -92,7 +92,7 @@ function ResearchPage() {
             through access, community involvement and how findings can be shared and used.
             Institutional partnerships and student placements are both welcome.
           </p>
-          <a href={`mailto:${contact.email}`} className="btn-text mt-16 text-ember">
+          <a href={`mailto:${contact.email}`} className="btn-text mt-16 text-leaf">
             Start a conversation <Arrow />
           </a>
         </div>

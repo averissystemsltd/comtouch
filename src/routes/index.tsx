@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Thirteen community-led experiences in Kwale County, Kenya. Mangrove restoration, mariculture and coastal research behind every tour.",
+          "Community-led experiences in Kwale County, Kenya. Mangrove restoration, mariculture and coastal research behind every tour.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -71,15 +71,14 @@ function Home() {
         />
 
         <div className="absolute bottom-24 left-16 right-16 z-10 md:bottom-[40px] md:left-[40px] md:right-[40px]">
-          <p className="label-overline text-paper/80">Tsunza-Mwache · Kenyan coast</p>
-          <p className="mt-12 max-w-[560px] text-body text-mist">
-            Community-led eco-tours across the tides, mangroves, food and dances of the
-            peninsula, where every visit helps restore the coast and pays the community
-            directly.
-          </p>
-          <h1 className="section-heading mt-24 max-w-[900px] text-paper">
+          <h1 className="section-heading max-w-[900px] text-paper">
             Discover Tsunza through Community Touch Kenya
           </h1>
+          <p className="mt-16 max-w-[560px] text-subheading text-mist">
+            Step into the rhythm of the coast with the people who live it. Fish the tide,
+            plant a mangrove, share a meal, and sit with the drums — every visit goes
+            straight back to the community.
+          </p>
           <div className="mt-24 flex flex-wrap items-center gap-16">
             <Link to="/book" className="btn-filled">
               Book a Tour <Arrow />
@@ -90,7 +89,7 @@ function Home() {
           </div>
           <ul className="mt-32 flex flex-wrap gap-24 text-paper">
             {[
-              { n: "13", l: "guided experiences" },
+              { n: "Local", l: "guided experiences" },
               { n: "100%", l: "community-led" },
               { n: "Every visit", l: "plants mangroves" },
             ].map((f) => (
@@ -136,14 +135,14 @@ function Home() {
         <div className="flex flex-col gap-16 md:flex-row md:items-end md:justify-between">
           <div className="max-w-[600px]">
             <p className="label-overline text-smoke">Experiences</p>
-            <h2 className="section-heading-sm mt-6">Thirteen ways into the peninsula</h2>
+            <h2 className="section-heading-sm mt-6">Ways into the peninsula</h2>
             <p className="mt-16 text-body text-pewter">
               From dhow sailing and traditional fishing to dances, palm wine and mangrove
               planting. Guided by the community, every step of the way.
             </p>
           </div>
-          <Link to="/eco-tours" className="btn-text text-ember">
-            See all 13 <Arrow />
+          <Link to="/eco-tours" className="btn-text text-leaf">
+            See all <Arrow />
           </Link>
         </div>
 
@@ -244,7 +243,7 @@ function Home() {
       <section className="page-shell pb-80">
         <div className="flex items-end justify-between gap-16">
           <h2 className="section-heading-sm">Moments from the peninsula</h2>
-          <Link to="/media" className="btn-text text-ember">
+          <Link to="/media" className="btn-text text-leaf">
             Watch the film <Arrow />
           </Link>
         </div>

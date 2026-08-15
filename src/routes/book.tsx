@@ -173,7 +173,7 @@ function BookPage() {
                 <a href={`tel:${contact.phone.replace(/\s/g, "")}`}>{contact.phone}</a>
               </li>
               <li>
-                <a href={`mailto:${contact.email}`} className="text-ember">
+                <a href={`mailto:${contact.email}`} className="text-leaf">
                   {contact.email}
                 </a>
               </li>
