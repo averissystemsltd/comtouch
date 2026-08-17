@@ -3,7 +3,7 @@ const VIDEO_ID = "TULMBoVPJrQ";
 export function YoutubeBackground({
   poster,
   posterAlt,
-  overlay = "bg-ink/35",
+  overlay = "bg-ink/30",
 }: {
   poster: string;
   posterAlt: string;
@@ -28,7 +28,10 @@ export function YoutubeBackground({
         tabIndex={-1}
         className="pointer-events-none absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 border-0"
       />
+      {/* Even base tint for consistent contrast across the whole hero */}
       <div className={`absolute inset-0 ${overlay}`} />
+      {/* Bottom-weighted gradient so the headline and copy stay legible over the video */}
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/25 to-transparent" />
     </div>
   );
 }

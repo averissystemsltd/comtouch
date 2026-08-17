@@ -13,6 +13,25 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+import { contact, orgBlurb } from "@/data/site";
+
+// Organization structured data (JSON-LD) so search engines can understand who
+// ComTouch Kenya is. Only fields we can state accurately are included.
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  name: "Community Touch Kenya",
+  alternateName: "ComTouch Kenya",
+  description: orgBlurb,
+  email: contact.email,
+  telephone: contact.phone,
+  areaServed: "Tsunza-Mwache peninsula, Kwale County, Kenya",
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "Kwale County",
+    addressCountry: "KE",
+  },
+};
 
 function NotFoundComponent() {
   return (
@@ -80,13 +99,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "ComTouch Kenya" },
-      { name: "description", content: "Community-based environmental organisation on the Tsunza-Mwache peninsula, Kwale County, Kenya." },
-      { name: "author", content: "Lovable" },
+      {
+        name: "description",
+        content:
+          "Community-based environmental organisation on the Tsunza-Mwache peninsula, Kwale County, Kenya.",
+      },
+      { name: "author", content: "Community Touch Kenya" },
       { property: "og:title", content: "ComTouch Kenya" },
-      { property: "og:description", content: "Community eco-tours, mangrove restoration and mariculture on the Kenyan coast." },
+      {
+        property: "og:description",
+        content: "Community eco-tours, mangrove restoration and mariculture on the Kenyan coast.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "ComTouch Kenya" },
+      { property: "og:locale", content: "en_KE" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -101,7 +128,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
-
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -114,6 +140,10 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
       </head>
       <body>
         {children}

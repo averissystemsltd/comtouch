@@ -1,24 +1,42 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { z } from "zod";
-import { Arrow } from "@/components/arrow";
 import { PageHeader } from "@/components/page-parts";
-import { tours, ksh, getTour } from "@/data/tours";
+import { BookingWizard } from "@/components/booking-wizard";
+import { Reveal } from "@/components/motion";
 import { contact } from "@/data/site";
+
+const whyChooseUs = [
+  {
+    title: "100% community-owned",
+    body: "Guides, cooks, dancers and makers are paid directly. Your visit stays on the peninsula.",
+  },
+  {
+    title: "Real culture, not a show",
+    body: "You take part in the dances, the fishing and the food, rather than watching from the outside.",
+  },
+  {
+    title: "Every visit restores the coast",
+    body: "Mangroves are planted on every tour, with Ksh 100 of each seedling funding the nursery.",
+  },
+  {
+    title: "Guides who live the tides",
+    body: "Local guides plan each day around the water, so trips are safe, authentic and unhurried.",
+  },
+];
 
 export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
-      { title: "Book an Experience — ComTouch Kenya" },
+      { title: "Book an Experience | ComTouch Kenya" },
       {
         name: "description",
         content:
-          "Send an enquiry for any of the thirteen ComTouch Kenya experiences. A guide confirms boat transport, dances and the full cost breakdown. No payment is taken online.",
+          "Plan any of the thirteen ComTouch Kenya experiences in four simple steps. A guide confirms boat transport, dances and the full cost breakdown. No payment is taken online.",
       },
       { property: "og:title", content: "Book an experience with ComTouch Kenya" },
       {
         property: "og:description",
-        content: "Tell us the experience, the date and your group size, and a guide will confirm everything.",
+        content:
+          "Tell us the experience, the date and your group size, and a guide will confirm everything.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -27,161 +45,139 @@ export const Route = createFileRoute("/book")({
   component: BookPage,
 });
 
-const schema = z.object({
-  name: z.string().trim().min(1, "Please tell us your name").max(100),
-  email: z.string().trim().email("Enter a valid email address").max(255),
-  phone: z.string().trim().min(6, "Enter a phone or WhatsApp number").max(40),
-  groupSize: z.coerce.number().int().min(1, "At least one guest").max(60),
-  experience: z.string().trim().min(1, "Choose an experience"),
-  date: z.string().trim().min(1, "Choose a preferred date"),
-  notes: z.string().trim().max(1000).optional(),
-});
-
-const example = getTour("fishing-crab-prawn-farming")!;
-
 function BookPage() {
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [sent, setSent] = useState(false);
-
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.currentTarget));
-    const parsed = schema.safeParse(data);
-    if (!parsed.success) {
-      const next: Record<string, string> = {};
-      for (const issue of parsed.error.issues) next[String(issue.path[0])] = issue.message;
-      setErrors(next);
-      return;
-    }
-    setErrors({});
-    setSent(true);
-  }
-
-  const field = "mt-8 w-full rounded-[3.2px] border border-mist bg-paper px-12 py-12 text-body";
-
   return (
     <main className="bg-paper text-ink">
       <PageHeader
         eyebrow="Book a Tour"
-        title="Book an experience"
-        intro="Tell us which experience, when, and how many in your group; a ComTouch guide will confirm boat transport, guide and dance availability and send the full cost breakdown."
+        title="Plan your day on the peninsula"
+        intro="Four quick steps: choose an experience, tell us when and how many, and leave your details. A ComTouch guide confirms boat transport, guide and dance availability and sends the full cost breakdown."
       />
 
-      <section className="page-shell grid gap-48 pb-80 md:grid-cols-2">
-        <div>
-          <p className="rounded-[8px] bg-mist p-16 text-body text-pewter">
-            Booking Ngoma ya Mulungu (late March)? Reserve between January and February, spaces
-            are limited.
-          </p>
+      <section className="page-shell grid gap-48 pb-[112px] lg:grid-cols-[1.4fr_1fr]">
+        <Reveal>
+          <BookingWizard />
+        </Reveal>
 
-          {sent ? (
-            <div className="mt-32 rounded-[8px] bg-pine p-24 text-paper">
-              <h2 className="section-heading-sm">Enquiry noted</h2>
-              <p className="mt-16 text-body text-mist">
-                A guide will confirm boat transport, guide and dance availability and send the
-                full cost breakdown. You can also reach the office by phone or WhatsApp on{" "}
-                {contact.phone}.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={onSubmit} noValidate className="mt-32 flex flex-col gap-16">
-              {[
-                { name: "name", label: "Full name", type: "text" },
-                { name: "email", label: "Email", type: "email" },
-                { name: "phone", label: "Phone / WhatsApp", type: "tel" },
-                { name: "groupSize", label: "Group size", type: "number" },
-              ].map((f) => (
-                <label key={f.name} className="block">
-                  <span className="label-overline text-smoke">{f.label}</span>
-                  <input name={f.name} type={f.type} className={field} maxLength={255} />
-                  {errors[f.name] && (
-                    <span className="mt-6 block text-[12px] text-coral">{errors[f.name]}</span>
-                  )}
-                </label>
-              ))}
-
-              <label className="block">
-                <span className="label-overline text-smoke">Experience</span>
-                <select name="experience" className={field} defaultValue="">
-                  <option value="">Select an experience</option>
-                  {tours.map((t) => (
-                    <option key={t.slug} value={t.title}>
-                      {t.title}
-                    </option>
-                  ))}
-                  <option value="Ngoma ya Mulungu, Kaya Chonyi">
-                    Ngoma ya Mulungu, Kaya Chonyi (annual event)
-                  </option>
-                </select>
-                {errors['experience'] && (
-                  <span className="mt-6 block text-[12px] text-coral">{errors['experience']}</span>
-                )}
-              </label>
-
-              <label className="block">
-                <span className="label-overline text-smoke">Preferred date</span>
-                <input name="date" type="date" className={field} />
-                {errors['date'] && (
-                  <span className="mt-6 block text-[12px] text-coral">{errors['date']}</span>
-                )}
-              </label>
-
-              <label className="block">
-                <span className="label-overline text-smoke">
-                  Anything else (dietary needs, mobility, arrival time)
-                </span>
-                <textarea name="notes" rows={4} maxLength={1000} className={field} />
-              </label>
-
-              <p className="text-[12px] text-smoke">
-                Your details are only used to arrange the trip. No payment is taken online.
-              </p>
-
-              <button type="submit" className="btn-filled w-fit">
-                Send enquiry <Arrow />
-              </button>
-            </form>
-          )}
-        </div>
-
-        <aside>
-          <h2 className="section-heading-sm">Example cost breakdown</h2>
-          <p className="mt-6 text-[12px] text-smoke">
-            {example.title} — {example.basis}
-          </p>
-          <table className="mt-24 w-full text-body">
-            <tbody>
-              {example.cost.map((c) => (
-                <tr key={c.label} className="hairline-top">
-                  <td className="py-12 pr-16 text-iron">{c.label}</td>
-                  <td className="py-12 text-right whitespace-nowrap text-pewter">
-                    {ksh(c.amount)}
-                  </td>
-                </tr>
-              ))}
-              <tr className="hairline-top">
-                <td className="py-16 pr-16 text-subheading">Total</td>
-                <td className="py-16 text-right text-subheading">{ksh(example.total)}</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div className="mt-32 rounded-[8px] bg-mist p-24">
-            <p className="label-overline text-pewter">Reach us directly</p>
-            <ul className="mt-12 flex flex-col gap-8 text-body">
+        <Reveal delay={0.1} className="flex flex-col gap-24">
+          {/* Direct contact card */}
+          <div className="relative overflow-hidden rounded-[8px] bg-tide p-24 text-paper">
+            <p className="label-overline text-mist/70">Prefer to talk it through?</p>
+            <h2 className="section-heading-sm mt-12">Reach a guide directly</h2>
+            <ul className="mt-20 flex flex-col gap-12 text-body">
               <li>
-                <a href={`tel:${contact.phone.replace(/\s/g, "")}`}>{contact.phone}</a>
-              </li>
-              <li>
-                <a href={`mailto:${contact.email}`} className="text-leaf">
-                  {contact.email}
+                <a
+                  href={`tel:${contact.phone.replace(/\s/g, "")}`}
+                  className="flex items-center gap-12 hover:text-paper"
+                >
+                  <IconCircle>☎</IconCircle>
+                  <span>
+                    <span className="block text-[12px] text-mist/70">Call</span>
+                    {contact.phone}
+                  </span>
                 </a>
               </li>
-              <li className="text-pewter">{contact.departures}</li>
+              <li>
+                <a
+                  href={`https://wa.me/${contact.whatsapp.replace(/[^0-9]/g, "")}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-12 hover:text-paper"
+                >
+                  <IconCircle>✆</IconCircle>
+                  <span>
+                    <span className="block text-[12px] text-mist/70">WhatsApp</span>
+                    {contact.whatsapp}
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="flex items-center gap-12 hover:text-paper"
+                >
+                  <IconCircle>✉</IconCircle>
+                  <span>
+                    <span className="block text-[12px] text-mist/70">Email</span>
+                    {contact.email}
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p className="mt-20 border-t border-paper/15 pt-16 text-[13px] text-mist/80">
+              {contact.departures}. Timings follow the tide, we confirm on booking.
+            </p>
+          </div>
+
+          {/* Why choose us */}
+          <div className="rounded-[8px] ring-1 ring-mist">
+            <div className="border-b border-mist p-20">
+              <p className="label-overline text-leaf">Why choose us</p>
+              <h2 className="mt-8 text-subheading text-ink">A day that gives back</h2>
+            </div>
+            <ul className="flex flex-col">
+              {whyChooseUs.map((r) => (
+                <li
+                  key={r.title}
+                  className="flex gap-12 border-b border-mist/70 p-20 last:border-b-0"
+                >
+                  <span className="mt-2 flex h-24 w-24 flex-none items-center justify-center rounded-full bg-leaf/12 text-leaf">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M5 13l4 4L19 7"
+                        stroke="currentColor"
+                        strokeWidth="2.4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span>
+                    <span className="block text-[14px] font-medium text-ink">{r.title}</span>
+                    <span className="mt-2 block text-[13px] leading-relaxed text-pewter">
+                      {r.body}
+                    </span>
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
-        </aside>
+
+          {/* Location map */}
+          <div className="overflow-hidden rounded-[8px] ring-1 ring-mist">
+            <div className="border-b border-mist p-20">
+              <p className="label-overline text-leaf">Where we are</p>
+              <h2 className="mt-8 text-subheading text-ink">The Tsunza-Mwache peninsula</h2>
+              <p className="mt-4 text-[12px] text-smoke">
+                Kwale County, reached by boat from Mkupe Jetty, Mombasa.
+              </p>
+            </div>
+            <iframe
+              title="Map of the Tsunza-Mwache peninsula, Kwale County, Kenya"
+              className="block h-[280px] w-full border-0 grayscale-[0.15]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=39.555%2C-4.09%2C39.68%2C-3.975&layer=mapnik&marker=-4.024%2C39.602"
+            />
+            <a
+              href="https://www.openstreetmap.org/?mlat=-4.024&mlon=39.602#map=13/-4.024/39.602"
+              target="_blank"
+              rel="noreferrer"
+              className="block border-t border-mist p-16 text-[13px] font-medium text-leaf hover:text-pine"
+            >
+              Open in a larger map →
+            </a>
+          </div>
+        </Reveal>
       </section>
     </main>
+  );
+}
+
+function IconCircle({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="flex h-40 w-40 flex-none items-center justify-center rounded-full bg-paper/12 text-[16px]">
+      {children}
+    </span>
   );
 }

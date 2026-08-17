@@ -15,7 +15,8 @@ export const Route = createFileRoute("/work/research")({
       { property: "og:title", content: "Research that meets the coast where it lives" },
       {
         property: "og:description",
-        content: "A living laboratory of mangrove creek, restoration sites and a working mariculture project.",
+        content:
+          "A living laboratory of mangrove creek, restoration sites and a working mariculture project.",
       },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -63,20 +64,23 @@ function ResearchPage() {
 
       <section className="page-shell pb-48">
         <p className="max-w-[700px] text-body text-pewter">
-          The peninsula is a rich living laboratory — mangrove creek, restoration sites, a working
-          mariculture project and a community that manages it all. We partner with researchers
-          whose work can strengthen coastal conservation and livelihoods, and who share their
-          findings openly with the people who live here.
+          The peninsula is a rich living laboratory: mangrove creek, restoration sites, a working
+          mariculture project and a community that manages it all. We partner with researchers whose
+          work can strengthen coastal conservation and livelihoods, and who share their findings
+          openly with the people who live here.
         </p>
       </section>
 
       <section className="page-shell pb-80">
-        <h2 className="section-heading-sm">What we offer researchers</h2>
-        <div className="mt-32">
-          <PointGrid points={offers} />
+        <div className="mx-auto max-w-[640px] text-center">
+          <p className="label-overline text-leaf">For researchers</p>
+          <h2 className="section-heading-sm mt-12">What we offer researchers</h2>
+        </div>
+        <div className="mt-40">
+          <PointGrid points={offers} align="center" />
         </div>
 
-        <h2 className="section-heading-sm mt-48">Topics we can support</h2>
+        <h2 className="section-heading-sm mt-64">Topics we can support</h2>
         <ul className="mt-24 max-w-[900px]">
           {topics.map((t) => (
             <li key={t} className="hairline-top py-16 text-body text-iron">

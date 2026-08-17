@@ -15,7 +15,8 @@ export const Route = createFileRoute("/get-involved/volunteer")({
       { property: "og:title", content: "Give your time to a living coast" },
       {
         property: "og:description",
-        content: "Hands-in-the-mud volunteering with a community-based environmental organisation in Kwale County.",
+        content:
+          "Hands-in-the-mud volunteering with a community-based environmental organisation in Kwale County.",
       },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -62,18 +63,21 @@ function VolunteerPage() {
       <section className="page-shell pb-48">
         <p className="max-w-[700px] text-body text-pewter">
           Volunteering with ComTouch Kenya means joining the community, not watching from the
-          outside. Whether you have a single day or several weeks, there is real work to do, and
-          a lot to learn about mangroves, tides and coastal life.
+          outside. Whether you have a single day or several weeks, there is real work to do, and a
+          lot to learn about mangroves, tides and coastal life.
         </p>
       </section>
 
       <section className="page-shell pb-80">
-        <h2 className="section-heading-sm">Ways to help</h2>
-        <div className="mt-32">
-          <PointGrid points={ways} />
+        <div className="mx-auto max-w-[640px] text-center">
+          <p className="label-overline text-leaf">Get stuck in</p>
+          <h2 className="section-heading-sm mt-12">Ways to help</h2>
+        </div>
+        <div className="mt-40">
+          <PointGrid points={ways} align="center" />
         </div>
 
-        <h2 className="section-heading-sm mt-48">Good to know</h2>
+        <h2 className="section-heading-sm mt-64">Good to know</h2>
         <ul className="mt-24 max-w-[900px]">
           {goodToKnow.map((g) => (
             <li key={g} className="hairline-top py-16 text-body text-iron">
@@ -85,8 +89,8 @@ function VolunteerPage() {
         <div className="mt-48 max-w-[700px]">
           <h2 className="section-heading-sm">Ready to join?</h2>
           <p className="mt-16 text-body text-pewter">
-            Tell us a little about yourself, when you would like to come and how long you can
-            stay. We will take it from there.
+            Tell us a little about yourself, when you would like to come and how long you can stay.
+            We will take it from there.
           </p>
           <a
             href={`mailto:${contact.email}?subject=Volunteering with ComTouch Kenya`}

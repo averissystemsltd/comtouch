@@ -85,12 +85,12 @@ function MangrovePage() {
           <p className="mt-24 text-body text-pewter">
             The Tsunza-Mwache creek was once thick with mangroves. Cutting for fuel and building,
             together with changing water, has thinned them, weakening the shore and the fishery.
-            Working hand in hand with the community, we are reversing that, one nursery and one
-            tide at a time.
+            Working hand in hand with the community, we are reversing that, one nursery and one tide
+            at a time.
           </p>
           <p className="mt-16 text-body text-pewter">
-            Because the people who plant are the people who fish, restoration here is not a
-            project that arrives and leaves. It is part of daily life on the peninsula.
+            Because the people who plant are the people who fish, restoration here is not a project
+            that arrives and leaves. It is part of daily life on the peninsula.
           </p>
         </div>
 
@@ -107,18 +107,21 @@ function MangrovePage() {
       </section>
 
       <section className="page-shell pb-80">
-        <h2 className="section-heading-sm">Why mangroves matter</h2>
-        <div className="mt-32">
-          <PointGrid points={why} />
+        <div className="mx-auto max-w-[640px] text-center">
+          <p className="label-overline text-leaf">Why it matters</p>
+          <h2 className="section-heading-sm mt-12">Why mangroves matter</h2>
+        </div>
+        <div className="mt-40">
+          <PointGrid points={why} align="center" />
         </div>
 
-        <ul className="mt-32 flex flex-wrap gap-8">
+        <ul className="mt-40 flex flex-wrap justify-center gap-8">
           {[
             "Ksh 100 plants and tends one mangrove seedling",
             "Nurseries run by local women's and youth groups",
             "Every tour adds seedlings and funds the nursery",
           ].map((f) => (
-            <li key={f} className="badge bg-mist text-pewter">
+            <li key={f} className="badge bg-leaf/[0.09] text-pine">
               {f}
             </li>
           ))}

@@ -1,8 +1,9 @@
 # Light Gallery
 
 # Aker — Style Reference
+
 > darkroom gallery wall
-Monumental type floats over muted landscape photography like exhibit labels in a high-end architectural gallery — white walls, warm terracotta spotlights, everything else recedes.
+> Monumental type floats over muted landscape photography like exhibit labels in a high-end architectural gallery — white walls, warm terracotta spotlights, everything else recedes.
 
 **Theme:** light
 
@@ -10,28 +11,29 @@ Aker speaks in the visual vocabulary of a premium real-estate developer: dramati
 
 ## Tokens — Colors
 
-| Name | Value | Token | Role |
-|------|-------|-------|------|
-| Ink | `#000000` | `--color-ink` | Primary text, hairline borders, icon strokes, link text on light surfaces |
-| Paper | `#ffffff` | `--color-paper` | Page canvas, card surfaces, text on dark photography and dark surfaces |
-| Char | `#1c1c1c` | `--color-char` | Dark surface panels, navigation pill background, elevated dark cards |
-| Midnight | `#070707` | `--color-midnight` | Deepest surface for dark feature cards and modal backgrounds |
-| Iron | `#262626` | `--color-iron` | Mid-dark panel surface, secondary dark backgrounds behind photography |
-| Slate | `#38464a` | `--color-slate` | Cool-tinted dark surface, used for subtle contrast against warmer darks |
-| Mist | `#e5e4e4` | `--color-mist` | Light card surfaces, hairline borders on white, image overlay tints |
-| Smoke | `#8d8d8d` | `--color-smoke` | Muted helper text, secondary borders, inactive metadata |
-| Pewter | `#666666` | `--color-pewter` | Secondary body text, body-emphasis borders |
-| Ember | `#b75928` | `--color-ember` | Link text, brand accent, warm highlight on muted cards — single chromatic accent that warms an otherwise neutral system |
-| Pine | `#193f32` | `--color-pine` | Dark green surface for feature cards and link backgrounds on light |
-| Tide | `#002934` | `--color-tide` | Deep teal-dark surface for link and card backgrounds, complements Pine in the cool brand register |
-| Driftwood | `#537179` | `--color-driftwood` | Decorative stroke and fill for illustrations and icon-line work, soft cool gray with depth |
-| Cedar | `#776157` | `--color-cedar` | Warm brown card surface, earth-toned card variant |
-| Coral | `#df6a6b` | `--color-coral` | Warm-pink card surface, used as an occasional warm-tinted card variant |
-| Primary Action Fill | `#494949` | `--color-primary-action-fill` | Neutral button treatment for secondary actions and selected controls. Use as the primary filled action background |
+| Name                | Value     | Token                         | Role                                                                                                                    |
+| ------------------- | --------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Ink                 | `#000000` | `--color-ink`                 | Primary text, hairline borders, icon strokes, link text on light surfaces                                               |
+| Paper               | `#ffffff` | `--color-paper`               | Page canvas, card surfaces, text on dark photography and dark surfaces                                                  |
+| Char                | `#1c1c1c` | `--color-char`                | Dark surface panels, navigation pill background, elevated dark cards                                                    |
+| Midnight            | `#070707` | `--color-midnight`            | Deepest surface for dark feature cards and modal backgrounds                                                            |
+| Iron                | `#262626` | `--color-iron`                | Mid-dark panel surface, secondary dark backgrounds behind photography                                                   |
+| Slate               | `#38464a` | `--color-slate`               | Cool-tinted dark surface, used for subtle contrast against warmer darks                                                 |
+| Mist                | `#e5e4e4` | `--color-mist`                | Light card surfaces, hairline borders on white, image overlay tints                                                     |
+| Smoke               | `#8d8d8d` | `--color-smoke`               | Muted helper text, secondary borders, inactive metadata                                                                 |
+| Pewter              | `#666666` | `--color-pewter`              | Secondary body text, body-emphasis borders                                                                              |
+| Ember               | `#b75928` | `--color-ember`               | Link text, brand accent, warm highlight on muted cards — single chromatic accent that warms an otherwise neutral system |
+| Pine                | `#193f32` | `--color-pine`                | Dark green surface for feature cards and link backgrounds on light                                                      |
+| Tide                | `#002934` | `--color-tide`                | Deep teal-dark surface for link and card backgrounds, complements Pine in the cool brand register                       |
+| Driftwood           | `#537179` | `--color-driftwood`           | Decorative stroke and fill for illustrations and icon-line work, soft cool gray with depth                              |
+| Cedar               | `#776157` | `--color-cedar`               | Warm brown card surface, earth-toned card variant                                                                       |
+| Coral               | `#df6a6b` | `--color-coral`               | Warm-pink card surface, used as an occasional warm-tinted card variant                                                  |
+| Primary Action Fill | `#494949` | `--color-primary-action-fill` | Neutral button treatment for secondary actions and selected controls. Use as the primary filled action background       |
 
 ## Tokens — Typography
 
 ### Proxima Nova — Primary typeface across all UI. Weight 300 carries the brand wordmark at 168px and large section headings (62–80px) — the whisper-weight at display sizes is anti-convention, creating authority through restraint instead of shouting with bold. Weight 400–500 handles body, labels, and UI. Weight 600 appears only for emphasis labels. Sizes range from 8px micro-labels to 168px display, a 21:1 ratio that produces a museum-label-to-billboard scale. · `--font-proxima-nova`
+
 - **Substitute:** Montserrat or Nunito Sans
 - **Weights:** 300, 400, 500, 600
 - **Sizes:** 8, 12, 13, 14, 15, 16, 18, 20, 22, 30, 36, 62, 80, 168
@@ -40,6 +42,7 @@ Aker speaks in the visual vocabulary of a premium real-estate developer: dramati
 - **Role:** Primary typeface across all UI. Weight 300 carries the brand wordmark at 168px and large section headings (62–80px) — the whisper-weight at display sizes is anti-convention, creating authority through restraint instead of shouting with bold. Weight 400–500 handles body, labels, and UI. Weight 600 appears only for emphasis labels. Sizes range from 8px micro-labels to 168px display, a 21:1 ratio that produces a museum-label-to-billboard scale.
 
 ### Lora — Serif accent for body passages and editorial copy. Used sparingly to break the all-sans rhythm — a single serif paragraph next to Proxima Nova body creates an editorial-press feel. Letter-spacing 0.0110em gives it slight breathing room. · `--font-lora`
+
 - **Substitute:** Lora (Google Fonts)
 - **Weights:** 400
 - **Sizes:** 15, 18
@@ -49,14 +52,14 @@ Aker speaks in the visual vocabulary of a premium real-estate developer: dramati
 
 ### Type Scale
 
-| Role | Size | Line Height | Letter Spacing | Token |
-|------|------|-------------|----------------|-------|
-| body | 15px | 1.5 | 0.15px | `--text-body` |
-| subheading | 18px | 1.5 | 0.18px | `--text-subheading` |
-| heading-sm | 22px | 1.25 | -0.44px | `--text-heading-sm` |
-| heading | 36px | 1.2 | -0.72px | `--text-heading` |
-| heading-lg | 62px | 1.1 | -1.55px | `--text-heading-lg` |
-| display | 168px | 0.8 | -4.2px | `--text-display` |
+| Role       | Size  | Line Height | Letter Spacing | Token               |
+| ---------- | ----- | ----------- | -------------- | ------------------- |
+| body       | 15px  | 1.5         | 0.15px         | `--text-body`       |
+| subheading | 18px  | 1.5         | 0.18px         | `--text-subheading` |
+| heading-sm | 22px  | 1.25        | -0.44px        | `--text-heading-sm` |
+| heading    | 36px  | 1.2         | -0.72px        | `--text-heading`    |
+| heading-lg | 62px  | 1.1         | -1.55px        | `--text-heading-lg` |
+| display    | 168px | 0.8         | -4.2px         | `--text-display`    |
 
 ## Tokens — Spacing & Shapes
 
@@ -64,34 +67,34 @@ Aker speaks in the visual vocabulary of a premium real-estate developer: dramati
 
 ### Spacing Scale
 
-| Name | Value | Token |
-|------|-------|-------|
-| 4 | 4px | `--spacing-4` |
-| 5 | 5px | `--spacing-5` |
-| 6 | 6px | `--spacing-6` |
-| 8 | 8px | `--spacing-8` |
-| 10 | 10px | `--spacing-10` |
-| 12 | 12px | `--spacing-12` |
-| 13 | 13px | `--spacing-13` |
-| 14 | 14px | `--spacing-14` |
-| 16 | 16px | `--spacing-16` |
-| 19 | 19px | `--spacing-19` |
-| 20 | 20px | `--spacing-20` |
-| 22 | 22px | `--spacing-22` |
-| 24 | 24px | `--spacing-24` |
-| 32 | 32px | `--spacing-32` |
-| 48 | 48px | `--spacing-48` |
-| 64 | 64px | `--spacing-64` |
+| Name | Value | Token          |
+| ---- | ----- | -------------- |
+| 4    | 4px   | `--spacing-4`  |
+| 5    | 5px   | `--spacing-5`  |
+| 6    | 6px   | `--spacing-6`  |
+| 8    | 8px   | `--spacing-8`  |
+| 10   | 10px  | `--spacing-10` |
+| 12   | 12px  | `--spacing-12` |
+| 13   | 13px  | `--spacing-13` |
+| 14   | 14px  | `--spacing-14` |
+| 16   | 16px  | `--spacing-16` |
+| 19   | 19px  | `--spacing-19` |
+| 20   | 20px  | `--spacing-20` |
+| 22   | 22px  | `--spacing-22` |
+| 24   | 24px  | `--spacing-24` |
+| 32   | 32px  | `--spacing-32` |
+| 48   | 48px  | `--spacing-48` |
+| 64   | 64px  | `--spacing-64` |
 
 ### Border Radius
 
-| Element | Value |
-|---------|-------|
-| cards | 8px |
-| small | 3.2px |
-| badges | 1584px |
-| images | 8px |
-| buttons | 80px |
+| Element | Value  |
+| ------- | ------ |
+| cards   | 8px    |
+| small   | 3.2px  |
+| badges  | 1584px |
+| images  | 8px    |
+| buttons | 80px   |
 
 ### Layout
 
@@ -103,66 +106,79 @@ Aker speaks in the visual vocabulary of a premium real-estate developer: dramati
 ## Components
 
 ### Brand Wordmark
+
 **Role:** Primary brand identifier displayed at extreme scale
 
 Proxima Nova weight 300 at 168px, line-height 0.80, letter-spacing -4.2px (-0.0250em). Color Paper (#ffffff) when overlaid on dark photography, Ink (#000000) on light sections. Functions as the page's hero anchor — its 21:1 size ratio against 15px body text is the single most signature-defining choice in the system.
 
 ### Navigation Pill
+
 **Role:** Compact dark mode-switcher/trigger in the top-right corner
 
 Char (#1c1c1c) background, fully rounded (1584px radius), ~13px padding vertical with brand label "AKER" + hamburger icon in Paper. Width fits content, height ~32px. Sits as a floating dark element against both light and dark hero photography.
 
 ### Navigation Card
+
 **Role:** Menu items revealed from the navigation pill, presented as visual cards
 
 Char (#1c1c1c) background, 8px radius, contains a 4:3 image on the left and a text block on the right. Title 15px Proxima Nova weight 400 Paper, description 12px weight 400 Mist (#e5e4e4), right-arrow icon 14px Paper. Two cards per row in the open nav state.
 
 ### Text-Arrow Button
+
 **Role:** Primary action affordance — used for "Contact us", "Let's chat", "Our team"
 
 Ghost style: no fill, no border. Label 13–15px Proxima Nova weight 400. Color varies — Paper on dark photography, Ink on light surfaces. Trailing right-arrow (→) at 16px. Contained in a 80px-radius pill outline for emphasized variants, or bare text for inline. Horizontal padding 19px vertical, 16px horizontal in the pill variant.
 
 ### Filled Dark Button
+
 **Role:** Secondary emphasized action on light surfaces
 
 Char (#1c1c1c) fill, 80px radius, Paper text 13px weight 500, 19px vertical padding, 16px horizontal padding. Used sparingly — most actions are ghost/text.
 
 ### Section Label
+
 **Role:** Overline label preceding section headings (e.g. "Core business areas")
 
 12px Proxima Nova weight 400, Smoke (#8d8d8d) or Pewter (#666666), letter-spacing 0.12px. Positioned above the heading with 6–8px gap. Sits left-aligned, not centered.
 
 ### Section Heading
+
 **Role:** Primary heading for content sections
 
 Proxima Nova weight 300 or 400, 36–62px, line-height 1.10–1.20, letter-spacing -0.0200em. Ink (#000000) on light sections, Paper on dark. Weight 300 at 62px for the largest section headings is the recurring signature.
 
 ### Two-Column Feature Card
+
 **Role:** Large editorial cards for "Invest with Aker" / "We're open to collaborate"
 
 Two equal-width cards in a 2-column grid. Left card: Mist (#e5e4e4) background, 8px radius, small overline label + large heading (Proxima Nova weight 300, 36–48px) + bottom-left text-arrow button + bottom-right decorative brand mark. Right card: full-bleed photo (landscape or cityscape), 8px radius, overline + heading in Paper overlaid on the image.
 
 ### Full-Bleed Hero Section
+
 **Role:** Opening visual statement
 
 100vw photography (landscape/cityscape/mountain), no border-radius, occupies full viewport height. Brand wordmark in Paper overlaid bottom-left, small intro paragraph (15px Proxima Nova, Paper, 6–8 line max) top-left, navigation pill top-right. Dark filter implied by subject matter rather than explicit overlay.
 
 ### Body Text Block
+
 **Role:** Editorial paragraph copy in light sections
 
 Proxima Nova weight 400, 15–18px, line-height 1.50, Ink (#000000). Max-width ~600px, left-aligned. For the brand statement, Lora 15–18px is used as the serif variant.
 
 ### Numbered List Item
+
 **Role:** Numbered entries for "What we do" lists ("01 Invest")
 
 Two-digit number (01, 02) in Smoke (#8d8d8d) at 12px Proxima Nova, label 18px Proxima Nova weight 400 Ink, positioned with 6px row gap, separated by a 1px Mist (#e5e4e4) hairline divider above each item.
 
 ### Pill Badge / Tag
+
 **Role:** Category labels, overline tags
 
 Fully rounded (1584px radius), 6–8px vertical padding, 14px horizontal padding. Mist (#e5e4e4) background with Ink text, or transparent with Paper text on dark. 12px Proxima Nova weight 500.
 
 ### Image Thumbnail Card
+
 **Role:** Small photo+label tiles within the expanded navigation
 
 8px radius, 4:3 image aspect ratio, dark overlay. Title 15px Paper, subtitle 12px Mist. Functions as a visual menu item — each section gets represented by its hero photograph.
@@ -170,6 +186,7 @@ Fully rounded (1584px radius), 6–8px vertical padding, 14px horizontal padding
 ## Do's and Don'ts
 
 ### Do
+
 - Use Proxima Nova weight 300 at 62px+ for any section heading that needs to feel premium — the whisper-weight at large sizes is the system's voice.
 - Default to text-arrow buttons (no fill, trailing →) for all primary actions; reserve filled dark buttons for moments of high emphasis.
 - Apply 80px border-radius to any button or pill-shaped container — this is the system's signature curve, not 4px or 8px.
@@ -179,6 +196,7 @@ Fully rounded (1584px radius), 6–8px vertical padding, 14px horizontal padding
 - Use the 8px radius for all card surfaces and image containers — do not flatten to 0px or round to 16px.
 
 ### Don't
+
 - Do not use weight 600 or 700 at display sizes — the system speaks at weight 300 even when shouting.
 - Do not introduce additional accent hues beyond Ember; the cool brand colors (Pine, Tide) are for card surfaces, not for text or buttons.
 - Do not use drop shadows for elevation — depth comes from photography and surface color contrast, not box-shadow.
@@ -189,14 +207,14 @@ Fully rounded (1584px radius), 6–8px vertical padding, 14px horizontal padding
 
 ## Surfaces
 
-| Level | Name | Value | Purpose |
-|-------|------|-------|---------|
-| 1 | Paper | `#ffffff` | Base page canvas for content sections |
-| 2 | Mist | `#e5e4e4` | Light card surface floating on Paper |
-| 3 | Pine | `#193f32` | Dark green feature card for tonal variety |
-| 4 | Tide | `#002934` | Deep teal card surface, darker than Pine |
-| 5 | Char | `#1c1c1c` | Navigation pill, modal panels, and dark elevated surfaces |
-| 6 | Midnight | `#070707` | Darkest surface for photography overlays and premium dark cards |
+| Level | Name     | Value     | Purpose                                                         |
+| ----- | -------- | --------- | --------------------------------------------------------------- |
+| 1     | Paper    | `#ffffff` | Base page canvas for content sections                           |
+| 2     | Mist     | `#e5e4e4` | Light card surface floating on Paper                            |
+| 3     | Pine     | `#193f32` | Dark green feature card for tonal variety                       |
+| 4     | Tide     | `#002934` | Deep teal card surface, darker than Pine                        |
+| 5     | Char     | `#1c1c1c` | Navigation pill, modal panels, and dark elevated surfaces       |
+| 6     | Midnight | `#070707` | Darkest surface for photography overlays and premium dark cards |
 
 ## Elevation
 
@@ -213,6 +231,7 @@ Page model: max-width 1200px centered for content, with full-bleed 100vw section
 ## Agent Prompt Guide
 
 **Quick Color Reference**
+
 - text: #000000 (on light), #ffffff (on dark photography)
 - background: #ffffff (canvas), #1c1c1c (dark surface)
 - border: #e5e4e4 (light), #000000 (dark)
@@ -264,8 +283,12 @@ Page model: max-width 1200px centered for content, with full-bleed 100vw section
   --color-primary-action-fill: #494949;
 
   /* Typography — Font Families */
-  --font-proxima-nova: 'Proxima Nova', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-lora: 'Lora', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-proxima-nova:
+    "Proxima Nova", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --font-lora:
+    "Lora", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
 
   /* Typography — Scale */
   --text-body: 15px;
@@ -365,8 +388,12 @@ Page model: max-width 1200px centered for content, with full-bleed 100vw section
   --color-primary-action-fill: #494949;
 
   /* Typography */
-  --font-proxima-nova: 'Proxima Nova', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-lora: 'Lora', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-proxima-nova:
+    "Proxima Nova", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --font-lora:
+    "Lora", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
 
   /* Typography — Scale */
   --text-body: 15px;

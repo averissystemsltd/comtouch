@@ -6,7 +6,7 @@ import { contact } from "@/data/site";
 export const Route = createFileRoute("/about/partners")({
   head: () => ({
     meta: [
-      { title: "Partners — Restore a Coast With Us | ComTouch Kenya" },
+      { title: "Partners: Restore a Coast With Us | ComTouch Kenya" },
       {
         name: "description",
         content:
@@ -15,7 +15,8 @@ export const Route = createFileRoute("/about/partners")({
       { property: "og:title", content: "Partner with us to restore a coast" },
       {
         property: "og:description",
-        content: "Six ways to work with a community-based environmental organisation in Kwale County, Kenya.",
+        content:
+          "Six ways to work with a community-based environmental organisation in Kwale County, Kenya.",
       },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -63,24 +64,27 @@ function PartnersPage() {
       <section className="page-shell pb-48">
         <p className="max-w-[700px] text-body text-pewter">
           ComTouch Kenya is a community-based environmental organisation on the Tsunza-Mwache
-          peninsula. Our strength is that the work is local and trusted, and our need is the
-          reach, resources and knowledge that good partners bring. Whether you are a funder, a
-          university, a company or a public agency, there is a real role for you here, and a
-          community ready to make the most of it.
+          peninsula. Our strength is that the work is local and trusted, and our need is the reach,
+          resources and knowledge that good partners bring. Whether you are a funder, a university,
+          a company or a public agency, there is a real role for you here, and a community ready to
+          make the most of it.
         </p>
       </section>
 
       <section className="page-shell pb-80">
-        <h2 className="section-heading-sm">Ways to partner</h2>
-        <div className="mt-32">
-          <PointGrid points={ways} columns={3} />
+        <div className="mx-auto max-w-[640px] text-center">
+          <p className="label-overline text-leaf">Work with us</p>
+          <h2 className="section-heading-sm mt-12">Ways to partner</h2>
+        </div>
+        <div className="mt-40">
+          <PointGrid points={ways} columns={3} align="center" />
         </div>
 
         <div className="mt-48 rounded-[8px] bg-midnight p-24 text-paper md:p-48">
           <h2 className="section-heading-sm">Our partners</h2>
           <p className="mt-16 max-w-[700px] text-body text-mist">
-            We are grateful to everyone standing behind this coast. As collaborations are
-            confirmed, our partners will appear here.
+            We are grateful to everyone standing behind this coast. As collaborations are confirmed,
+            our partners will appear here.
           </p>
           <div className="mt-32 grid gap-16 sm:grid-cols-3 md:grid-cols-6">
             {Array.from({ length: 6 }).map((_, i) => (
@@ -100,7 +104,7 @@ function PartnersPage() {
 
       <CtaBand
         heading="Help us bring the coast back"
-        body="Donate, volunteer or partner with us — every route supports the Tsunza-Mwache community and the mangroves it protects."
+        body="Donate, volunteer or partner with us. Every route supports the Tsunza-Mwache community and the mangroves it protects."
       />
     </main>
   );

@@ -1,17 +1,29 @@
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Arrow } from "./arrow";
-import logo from "@/assets/comtouch-logo.png.asset.json";
+import logo from "@/assets/comtouch-logo.png";
 
 const groups = [
   {
     label: "Eco Tours",
     links: [
       { to: "/eco-tours", label: "All Experiences" },
-      { to: "/eco-tours/$slug", params: { slug: "cultural-local-dance" }, label: "Culture & Dance" },
+      {
+        to: "/eco-tours/$slug",
+        params: { slug: "cultural-local-dance" },
+        label: "Culture & Dance",
+      },
       { to: "/eco-tours/$slug", params: { slug: "dhow-sailing" }, label: "Dhow Sailing" },
-      { to: "/eco-tours/$slug", params: { slug: "mangrove-conservation" }, label: "Mangrove Tours" },
-      { to: "/eco-tours/$slug", params: { slug: "eco-learning-mwache-forest" }, label: "Eco-Learning" },
+      {
+        to: "/eco-tours/$slug",
+        params: { slug: "mangrove-conservation" },
+        label: "Mangrove Tours",
+      },
+      {
+        to: "/eco-tours/$slug",
+        params: { slug: "eco-learning-mwache-forest" },
+        label: "Eco-Learning",
+      },
     ],
   },
   {
@@ -45,6 +57,13 @@ export function SiteNav() {
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
+  // The homepage has a full-bleed dark hero, so the header can sit transparently
+  // over it. Every other page starts on a light background, so the header must be
+  // solid from the top to stay readable. This keeps the header consistent site-wide.
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const overHero = pathname === "/";
+  const solid = scrolled || !overHero;
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
@@ -55,21 +74,29 @@ export function SiteNav() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
+        solid
           ? "bg-paper text-ink shadow-[0_1px_0_0_rgba(0,0,0,0.06)] hairline-bottom"
           : "bg-transparent text-paper"
       }`}
       onMouseLeave={() => setOpenGroup(null)}
     >
-      <div className="mx-auto flex h-72 max-w-[1200px] items-center justify-between gap-16 px-16 md:px-24">
-        <Link to="/" aria-label="ComTouch Kenya — home" className="flex flex-none items-center">
+      <div className="mx-auto flex h-[76px] max-w-[1200px] items-center justify-between gap-16 px-16 md:px-24">
+        <Link
+          to="/"
+          aria-label="Community Touch Kenya, home"
+          className="flex flex-none items-center gap-10"
+        >
           <img
-            src={logo.url}
+            src={logo}
             alt="Community Touch Kenya logo"
-            width={48}
-            height={48}
-            className="h-48 w-48 object-contain"
+            width={52}
+            height={52}
+            className="h-[52px] w-[52px] object-contain"
           />
+          <span className="flex flex-col leading-none">
+            <span className="text-[15px] font-semibold tracking-[-0.01em]">Community Touch</span>
+            <span className="text-[10px] font-medium tracking-[0.28em] opacity-70">KENYA</span>
+          </span>
         </Link>
 
         <nav className="hidden flex-1 items-center justify-center gap-8 lg:flex">
@@ -80,10 +107,12 @@ export function SiteNav() {
                 aria-expanded={openGroup === g.label}
                 className={`flex h-32 items-center gap-5 rounded-[1584px] px-10 py-6 text-[13px] font-medium tracking-[0.12px] transition-colors ${
                   openGroup === g.label
-                    ? scrolled
+                    ? solid
                       ? "bg-mist text-ink"
                       : "bg-paper/15 text-paper"
-                    : "hover:bg-paper/10"
+                    : solid
+                      ? "hover:bg-ink/5"
+                      : "hover:bg-paper/10"
                 }`}
               >
                 {g.label}
@@ -126,7 +155,7 @@ export function SiteNav() {
           <button
             onClick={() => setOpen((v) => !v)}
             className={`flex h-32 items-center gap-6 rounded-[1584px] px-10 lg:hidden ${
-              scrolled ? "bg-char text-paper" : "bg-paper/15 text-paper"
+              solid ? "bg-char text-paper" : "bg-paper/15 text-paper"
             }`}
             aria-expanded={open}
             aria-label="Open menu"

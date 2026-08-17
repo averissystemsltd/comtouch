@@ -11,7 +11,7 @@ export const Route = createFileRoute("/legal/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Page not found — ComTouch Kenya" },
+          { title: "Page not found | ComTouch Kenya" },
           { name: "robots", content: "noindex" },
         ],
       };
@@ -19,9 +19,9 @@ export const Route = createFileRoute("/legal/$slug")({
     const p = loaderData.page;
     return {
       meta: [
-        { title: `${p.title} — ComTouch Kenya` },
+        { title: `${p.title} | ComTouch Kenya` },
         { name: "description", content: p.intro },
-        { property: "og:title", content: `${p.title} — ComTouch Kenya` },
+        { property: "og:title", content: `${p.title} | ComTouch Kenya` },
         { property: "og:description", content: p.intro },
         { property: "og:type", content: "article" },
         { name: "twitter:card", content: "summary" },
@@ -36,7 +36,7 @@ function LegalPage() {
 
   return (
     <main className="bg-paper text-ink">
-      <header className="page-shell pt-80 pb-32">
+      <header className="page-shell pb-32 pt-[128px]">
         <p className="label-overline text-smoke">Legal</p>
         <h1 className="section-heading-sm mt-6 max-w-[700px]">{page.title}</h1>
         <p className="mt-16 max-w-[700px] text-body text-pewter">{page.intro}</p>

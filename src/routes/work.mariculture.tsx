@@ -15,7 +15,8 @@ export const Route = createFileRoute("/work/mariculture")({
       { property: "og:title", content: "Growing seafood in balance with the sea" },
       {
         property: "og:description",
-        content: "Community-run mariculture that protects the creek by giving people a stake in its health.",
+        content:
+          "Community-run mariculture that protects the creek by giving people a stake in its health.",
       },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -67,8 +68,8 @@ function MariculturePage() {
           <h2 className="section-heading-sm">Livelihoods that ease the pressure</h2>
           <p className="mt-24 text-body text-pewter">
             When the only income is the wild catch, a hard season pushes people to fish harder or
-            cut mangroves to sell. Mariculture offers another path, growing seafood in managed
-            ponds and cages so families earn a living while the wild creek recovers.
+            cut mangroves to sell. Mariculture offers another path, growing seafood in managed ponds
+            and cages so families earn a living while the wild creek recovers.
           </p>
           <p className="mt-16 text-body text-pewter">
             It is a practical, community-run answer to a real tension on the coast, protecting
@@ -76,9 +77,12 @@ function MariculturePage() {
           </p>
         </div>
 
-        <h2 className="section-heading-sm mt-48">Good for people and the creek</h2>
-        <div className="mt-32">
-          <PointGrid points={points} />
+        <div className="mx-auto mt-64 max-w-[640px] text-center">
+          <p className="label-overline text-leaf">The balance</p>
+          <h2 className="section-heading-sm mt-12">Good for people and the creek</h2>
+        </div>
+        <div className="mt-40">
+          <PointGrid points={points} align="center" />
         </div>
       </section>
 

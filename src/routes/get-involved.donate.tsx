@@ -6,7 +6,7 @@ import { contact } from "@/data/site";
 export const Route = createFileRoute("/get-involved/donate")({
   head: () => ({
     meta: [
-      { title: "Donate — Fund a Mangrove, Fund a Future | ComTouch Kenya" },
+      { title: "Donate: Fund a Mangrove, Fund a Future | ComTouch Kenya" },
       {
         name: "description",
         content:
@@ -15,7 +15,8 @@ export const Route = createFileRoute("/get-involved/donate")({
       { property: "og:title", content: "Fund a mangrove, fund a future" },
       {
         property: "og:description",
-        content: "Support community nurseries, planting days and sustainable coastal livelihoods in Kwale County, Kenya.",
+        content:
+          "Support community nurseries, planting days and sustainable coastal livelihoods in Kwale County, Kenya.",
       },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -91,8 +92,8 @@ function DonatePage() {
           <h2 className="section-heading-sm">How to give</h2>
           <p className="mt-16 text-body text-pewter">
             We are happy to receive one-off or regular gifts, and to discuss larger grants and
-            partnerships. Get in touch and we will share current payment details and confirm
-            exactly how your support will be used.
+            partnerships. Get in touch and we will share current payment details and confirm exactly
+            how your support will be used.
           </p>
           <ul className="mt-24">
             {howToGive.map((h) => (
@@ -102,7 +103,10 @@ function DonatePage() {
             ))}
           </ul>
           <div className="mt-32 flex flex-wrap items-center gap-16">
-            <a href={`mailto:${contact.email}?subject=Giving to ComTouch Kenya`} className="btn-filled">
+            <a
+              href={`mailto:${contact.email}?subject=Giving to ComTouch Kenya`}
+              className="btn-filled"
+            >
               Talk to us about giving <Arrow />
             </a>
             <Link to="/about/partners" className="btn-outline">

@@ -18,11 +18,7 @@ export type Tour = {
 };
 
 export type TourCategory =
-  | "Fishing & water"
-  | "Culture & dance"
-  | "Conservation & nature"
-  | "Village life"
-  | "Eco-learning";
+  "Fishing & water" | "Culture & dance" | "Conservation & nature" | "Village life" | "Eco-learning";
 
 export const tourCategories: TourCategory[] = [
   "Fishing & water",
@@ -204,12 +200,12 @@ export const tours: Tour[] = [
     arrival: "2:00pm",
     meetingPoint: "Mkupe Jetty",
     summary:
-      "Rawawe, kayamba, ngoma ya mlungu and mdundiko performances, with a craft exhibition.",
+      "Rawawe, kayamba, ngoma ya mulungu and mdundiko performances, with a craft exhibition.",
     intro:
-      "An afternoon exhibition of local dance on the Tsunza peninsula: Rawawe kayamba, ngoma ya mlungu and mdundiko, alongside a craft exhibition.",
+      "An afternoon exhibition of local dance on the Tsunza peninsula: Rawawe, kayamba, ngoma ya mulungu and mdundiko, alongside a craft exhibition.",
     included: [
       "Exhibition of local dance on the Tsunza peninsula",
-      "Rawawe kayamba, ngoma ya mlungu and mdundiko performances",
+      "Rawawe, kayamba, ngoma ya mulungu and mdundiko performances",
       "Craft exhibition",
     ],
     howItRuns:
@@ -265,8 +261,7 @@ export const tours: Tour[] = [
     duration: "Half day (4 hours)",
     arrival: "9:00am or 2:00pm",
     meetingPoint: "Mkupe Jetty",
-    summary:
-      "Four hours along Tsunza-Mwache creek, mangrove species, zonation and birdwatching.",
+    summary: "Four hours along Tsunza-Mwache creek, mangrove species, zonation and birdwatching.",
     intro:
       "Four scenic hours along the Tsunza-Mwache creek and its beautiful meanderings, blended with different mangrove types, species zonation and birds. Capacity is a minimum of 2 and a maximum of 4.",
     included: [
@@ -287,7 +282,8 @@ export const tours: Tour[] = [
       { label: "Local dance", amount: 6000 },
     ],
     total: 14150,
-    goodToKnow: "Binoculars are worth bringing for the birdlife. Mornings are calmest for the water.",
+    goodToKnow:
+      "Binoculars are worth bringing for the birdlife. Mornings are calmest for the water.",
   },
   {
     slug: "wine-tapping-tasting",

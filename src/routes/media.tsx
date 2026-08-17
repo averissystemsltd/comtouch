@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/page-parts";
 import { mediaGroups } from "@/data/site";
 import { YoutubeBackground } from "@/components/youtube-background";
-import dance from "@/assets/ct-dance.jpg";
+import culture from "@/assets/ct-culture.jpg";
 import fishing from "@/assets/ct-fishing.jpg";
 import mangrove from "@/assets/ct-mangrove.jpg";
 import creek from "@/assets/ct-hero-creek.jpg";
@@ -10,7 +10,7 @@ import creek from "@/assets/ct-hero-creek.jpg";
 export const Route = createFileRoute("/media")({
   head: () => ({
     meta: [
-      { title: "Media — The Peninsula on Film | ComTouch Kenya" },
+      { title: "Media: The Peninsula on Film | ComTouch Kenya" },
       {
         name: "description",
         content:
@@ -19,7 +19,8 @@ export const Route = createFileRoute("/media")({
       { property: "og:title", content: "The peninsula, on film" },
       {
         property: "og:description",
-        content: "Video clips of fishing, dhow sailing, dance and mangrove restoration in Kwale County, Kenya.",
+        content:
+          "Video clips of fishing, dhow sailing, dance and mangrove restoration in Kwale County, Kenya.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -28,7 +29,7 @@ export const Route = createFileRoute("/media")({
   component: MediaPage,
 });
 
-const covers = [fishing, creek, dance, mangrove];
+const covers = [fishing, creek, culture, mangrove];
 
 function MediaPage() {
   return (
@@ -36,7 +37,7 @@ function MediaPage() {
       <PageHeader
         eyebrow="Media"
         title="The peninsula, on film"
-        intro="Short clips from each experience — tides, tools, dances and the mangrove nursery — so you know exactly what a day out with ComTouch looks like."
+        intro="Short clips from each experience, from tides and tools to dances and the mangrove nursery, so you know exactly what a day out with ComTouch looks like."
       />
 
       <section className="relative mb-80 h-[70vh] w-full overflow-hidden">
